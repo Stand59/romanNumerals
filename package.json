@@ -1,0 +1,11 @@
+{
+  "name": "RomanNum",
+  "version": "1.0.0",
+  "description": "A way to convert numbers to roman numerals and the other way around",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Standing",
+  "license": "ISC"
+}
