@@ -9,13 +9,31 @@
 <body>
     <h1>Roman Numeral Conversion</h1>
     <form>
-        <label>Insert a Roman Numeral in the box and the associated number with be returned.</label><br><br>
-        <input type="text" id="answer" name="answer"><br><br>
-        <input type="submit" value="Submit" onclick="romanNum(document.getElementById('answer').value)">
+        <label>Insert a roman numeral in the box and the equivilant number with be returned.</label><br><br>
+        <input type="text" id="romAnswer" name="romAanswer"><br><br>
+        <input type="submit" value="Submit" onclick="romanNum(document.getElementById('romAnswer').value)">
+    </form><br>
+    <form>
+        <label>Insert a number in the box and the equivilant roman numeral with be returned.</label><br><br>
+        <input type="text" id="numAnswer" name="numAnswer"><br><br>
+        <input type="submit" value="Submit" onclick="regNum(document.getElementById('numAnswer').value)">
     </form>
     <script>
         function romanNum(answer) {
-            alert(answer);
+            let countI = (answer.match(/I/gi) || []).length;
+            let countV = (answer.match(/V/gi) || []).length;
+            let countX = (answer.match(/X/gi) || []).length;
+            let countL = (answer.match(/L/gi) || []).length;
+            let countC = (answer.match(/C/gi) || []).length;
+            let countD = (answer.match(/D/gi) || []).length;
+            let countM = (answer.match(/M/gi) || []).length;
+            let countSum = countI * 1 + countV * 5 + countX * 10 + countL * 50 + countC * 100 + countD * 100 + countM * 1000;
+            
+        
+            alert('The roman numeral equivilant of your number is: ' + countSum );
+        }
+        function regNum(answer) {
+            alert('The equivilant of your roman numeral is: ' + answer);
         }
     </script>
 </body>
