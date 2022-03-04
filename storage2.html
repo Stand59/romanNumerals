@@ -9,12 +9,12 @@
 <body>
     <h1>Roman Numeral Conversion</h1>
     <form>
-        <label>Insert a roman numeral in the box and the equivilant number written in integer notation with be returned.</label><br><br>
+        <label>Insert a roman numeral in the box and the equivilant number with be returned.</label><br><br>
         <input type="text" id="romAnswer" name="romAanswer"><br><br>
         <input type="submit" value="Submit" onclick="romanNum(document.getElementById('romAnswer').value)">
     </form><br>
     <form>
-        <label>Insert a number written in integer notation in the box and the equivilant roman numeral with be returned.</label><br><br>
+        <label>Insert a number in the box and the equivilant roman numeral with be returned.</label><br><br>
         <input type="text" id="numAnswer" name="numAnswer"><br><br>
         <input type="submit" value="Submit" onclick="regNum(document.getElementById('numAnswer').value)">
     </form>
@@ -52,71 +52,23 @@
             alert('The roman numeral equivilant of your number is: ' + countSum );
         }
         function regNum(answer) {
+            var withoutM;
 
-        
-            let thousand = 'M';
-            let fiveHundred = 'D';
-            let hundred = 'C';
-            let mAnswer='';
-            let dAnswer='';
-            
-            
             if (answer.length >= 4) {
-                subtractM();
+                var countM = parseInt(answer/1000);
+                withoutM = answer - countM * 1000;
+                console.log(withoutM);
+                console.log(countM);
+                console.log('hi mom');
+                if ( withoutM === 3 ){
+                    console.log('above 500');
+                };
+                if (withoutM.length === 3 && withoutM < 500){
+                    console.log('below 500');
+                };
             } 
 
-            function subtractM() {
-                countM = parseInt(answer/1000);
-                withoutM = answer - countM * 1000;
-                console.log(withoutM.toString());
-                console.log(countM);
-                addM();
-                
-                if ( withoutM.toString().length == 3 && withoutM.toString() >= 500 ){
-                    console.log('above 500');
-                    subtractD(withoutM);
-                };
-                if (withoutM.toString().length === 3 && withoutM.toString() < 500){
-                    console.log('below 500');
-                    subtractC(withoutM);
-                };
-            }
-
-            function subtractD(withoutM) {
-                countD = parseInt(withoutM.toString()/500);
-                withoutD = withoutM.toString() - countD * 500;
-                console.log(withoutD.toString());
-                console.log('subtractD worked')
-            }
-
-            function subtractC(withoutM) {
-                countC = parseInt(withoutM.toString()/100);
-                withoutC = withoutM.toString() - countC * 100;
-                console.log(withoutC.toString());
-                console.log('subtractC worked')
-            }
-            
-            
-            
-            function addM(countM){
-                if (countM){
-                    mAnswer=thousand.repeat(countM.toString());
-                }
-            }
-
-            function addD (countD){
-                if (countD){
-                    mAnswer=fiveHundred.repeat(countD.toString());
-                }
-            }
-           
-            
-            let addedAnswers = mAnswer 
-            
-            
-            
-
-            alert('The equivilant of your roman numeral is: ' + addedAnswers);
+            alert('The equivilant of your roman numeral is: ' + answer);
         }
     </script>
 </body>
