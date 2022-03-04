@@ -8,27 +8,27 @@ function romanNum(answer) {
     let countM = (answer.match(/M/gi) || []).length;
     let countSum = countI * 1 + countV * 5 + countX * 10 + countL * 50 + countC * 100 + countD * 500 + countM * 1000;
     
-    if (answer.includes('IIII' || 'VV' || 'XXXX' || 'LL' || 'CCCC' || 'DD')){
+    if (answer.includes('IIII') || answer.includes( 'XXXX' ) || answer.includes( 'LL' ) || answer.includes( 'CCCC' ) || answer.includes( 'DD' ) ){
         alert ('Your input was not a valid Roman Numeral. Hint: Look up Subtractive Notation.')
         countSum = ('Not a valid Input')
     }
 
-    if (answer.includes('IIV' || 'IIX' || 'IL' || 'IC' || 'ID' || 'IM')) {
+    if (answer.includes( 'IIV' ) || answer.includes( 'IIX' ) || answer.includes( 'IL' ) || answer.includes( 'IC' ) || answer.includes( 'ID' ) || answer.includes( 'IM' )) {
         alert ('Your input was not a valid Roman Numeral.')
         countSum = ('Not a valid Input')
     }
 
-    if (answer.includes('VV' || 'VX' || 'VL' || 'VC' || 'VD' || 'VM')) {
+    if (answer.includes( 'IVI' ) || answer.includes( 'VV' ) || answer.includes( 'VX' ) || answer.includes( 'VL' ) || answer.includes( 'VC' ) || answer.includes( 'VD' ) || answer.includes( 'VM' )) {
         alert ('Your input was not a valid Roman Numeral.')
         countSum = ('Not a valid Input')
     }
 
-    if (answer.includes('XXC' || 'XXL' || 'XD' || 'XM')) {
+    if (answer.includes( 'XXC' ) || answer.includes( 'XXL' ) || answer.includes( 'XD' ) || answer.includes( 'XM' )) {
         alert ('Your input was not a valid Roman Numeral.')
         countSum = ('Not a valid Input')
     }
 
-    if (answer.includes('LL' || 'LC' || 'LD' || 'LM')) {
+    if (answer.includes( 'LL' ) || answer.includes( 'LC' ) || answer.includes( 'LD' ) || answer.includes( 'LM' )) {
         alert ('Your input was not a valid Roman Numeral.')
         countSum = ('Not a valid Input')
     }
@@ -233,6 +233,6 @@ function regNum(answer) {
     }
 
 
-    alert('The equivilant of your roman numeral is: ' + addedAnswers);
+    alert('The roman numeral equivilant of your integer is: ' + addedAnswers);
     
 }
