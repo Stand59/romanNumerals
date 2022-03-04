@@ -4,6 +4,7 @@ h1 {
     text-align: center;
     margin: 40px;
     font-size: 66px;
+    font-weight: bold;
 }
 
 label {
@@ -20,8 +21,6 @@ form {
 #button {
     background-color: #8A2BE2;
     margin: 5px;
-    transition-duration: 0.4s;
-    font: 'Smooch Sans', sans-serif;
 }
 
 
