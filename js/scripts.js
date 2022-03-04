@@ -6,8 +6,43 @@ function romanNum(answer) {
     let countC = (answer.match(/C/gi) || []).length;
     let countD = (answer.match(/D/gi) || []).length;
     let countM = (answer.match(/M/gi) || []).length;
-    let countSum = countI * 1 + countV * 5 + countX * 10 + countL * 50 + countC * 100 + countD * 100 + countM * 1000;
+    let countSum = countI * 1 + countV * 5 + countX * 10 + countL * 50 + countC * 100 + countD * 500 + countM * 1000;
     
+    if (answer.includes('IIII' || 'VV' || 'XXXX' || 'LL' || 'CCCC' || 'DD')){
+        alert ('Your input was not a valid Roman Numeral. Hint: Look up Subtractive Notation.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('IIV' || 'IIX' || 'IL' || 'IC' || 'ID' || 'IM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('VV' || 'VX' || 'VL' || 'VC' || 'VD' || 'VM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('XXC' || 'XXL' || 'XD' || 'XM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('LL' || 'LC' || 'LD' || 'LM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('CCD' || 'CCM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
+    if (answer.includes('DM')) {
+        alert ('Your input was not a valid Roman Numeral.')
+        countSum = ('Not a valid Input')
+    }
+
     if (answer.indexOf('I') === answer.indexOf('V')-1 && (answer.includes('I') && answer.includes('V'))) {
         countSum -= 2;
     } 
@@ -25,6 +60,10 @@ function romanNum(answer) {
     } 
 
     if (answer.indexOf('C') === answer.indexOf('M')-1 && (answer.includes('C') && answer.includes('M'))) {
+        countSum -= 200;
+    } 
+
+    if (answer.indexOf('C') === answer.indexOf('D')-1 && (answer.includes('C') && answer.includes('D'))) {
         countSum -= 200;
     } 
 
@@ -163,6 +202,7 @@ function regNum(answer) {
 
     function error() {
         alert('Sorry... This program is not equiped to handle converting numbers larger than 4999 at this time. Please enter a number lower than 5000.')
+        iAnswer = 'not valid input';
     }
 
     let addedAnswers = mAnswer + dAnswer + cAnswer + lAnswer + xAnswer + vAnswer + iAnswer
