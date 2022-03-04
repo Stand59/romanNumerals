@@ -1,0 +1,20 @@
+h1 {
+    font-family: "Lobster";
+    color: #8A2BE2;
+    text-align: center;
+    margin: 40px;
+}
+
+label {
+    font-family: "Lobster";
+    color: #D2691E;
+}
+
+form { 
+    text-align: center;
+}
+
+#button {
+    background-color: #E0FFFF;
+    margin: 5px;
+}
