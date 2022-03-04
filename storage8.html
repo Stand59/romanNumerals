@@ -59,22 +59,16 @@
             let hundred = 'C';
             let fifty = 'L';
             let ten = 'X';
-            let five = 'V';
-            let one = 'I';
             let mAnswer='';
             let dAnswer='';
             let cAnswer='';
             let lAnswer='';
             let xAnswer='';
-            let vAnswer='';
-            let iAnswer='';
             
             
-            if (answer <= 4999) {
+            if (answer.length >= 4) {
                 subtractM();
-            } else {
-                error();
-            }
+            } 
 
             function subtractM() {
                 countM = parseInt(answer/1000);
@@ -116,91 +110,49 @@
                 withoutX = withoutL.toString() - countX * 10;
                 console.log('subtracX worked');
                 addX(countX);
-                subtractV(withoutX);
             }
-
-            function subtractV(withoutX) {
-                countV = parseInt(withoutX.toString()/5);
-                withoutV = withoutX.toString() - countV * 5;
-                console.log('subtractV worked');
-                addV(countV);
-                subtractI(withoutV);
-            } 
             
-            function subtractI(withoutV) {
-                countI = parseInt(withoutV.toString()/1);
-                console.log('subtractI worked');
-                addI(countI);
-            }
-
-            function addM(countM) {
-                if (countM) {
+            function addM(countM){
+                if (countM){
                     mAnswer = thousand.repeat(countM.toString());
                     console.log(mAnswer);
                 }
             }
 
-            function addD(countD) {
+            function addD(countD){
                 if (countD){
                     dAnswer = fiveHundred.repeat(countD.toString());
                     console.log(dAnswer);
                 }
             }
 
-            function addC(countC) {
-                if (countC) {
+            function addC(countC){
+                if (countC){
                     cAnswer = hundred.repeat(countC.toString());
                     console.log(cAnswer);
                 }
             }
 
-            function addL(countL) {
-                if (countL) {
+            function addL(countL){
+                if (countL){
                     lAnswer = fifty.repeat(countL.toString());
                     console.log(lAnswer);
                 }
             }
            
-            function addX(countX) {
-                if (countX) {
+            function addX(countX){
+                if (countX){
                     xAnswer = ten.repeat(countX.toString());
                     console.log(xAnswer);
                 }
             }
             
-            function addV(countV) {
-                if (countV) {
-                    vAnswer = five.repeat(countV.toString());
-                    console.log(vAnswer);
-                }
-            }
-
-            function addI(countI) {
-                if (countI) {
-                    iAnswer = one.repeat(countI.toString());
-                    console.log(iAnswer);
-                }
-            }
-
-            function error() {
-                alert('Sorry... This program is not equiped to handle converting numbers larger than 4999 at this time. Please enter a number lower than 5000.')
-            }
-
-            let addedAnswers = mAnswer + dAnswer + cAnswer + lAnswer + xAnswer + vAnswer + iAnswer
+            let addedAnswers = mAnswer + dAnswer + cAnswer + lAnswer + xAnswer
+            
+            
             
 
-            if(addedAnswers.includes('VIIII')) {
-                newAnswer = addedAnswers.replace('VIIII', 'IX');
-            } else if (addedAnswer.includes('IIII')) {
-                newAnswer = addedAnswers.replace('IIII', 'IV');
-            } else {
-                newAnswer = newAnswer
-            }
-
-           
-
-            alert('The equivilant of your roman numeral is: ' + newAnswer);
-            
+            alert('The equivilant of your roman numeral is: ' + addedAnswers);
         }
     </script>
 </body>
