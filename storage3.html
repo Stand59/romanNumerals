@@ -57,11 +57,8 @@
             let thousand = 'M';
             let fiveHundred = 'D';
             let hundred = 'C';
-            let fifty = 'L';
             let mAnswer='';
             let dAnswer='';
-            let cAnswer='';
-            let lAnswer='';
             
             
             if (answer.length >= 4) {
@@ -73,66 +70,48 @@
                 withoutM = answer - countM * 1000;
                 console.log(withoutM.toString());
                 console.log(countM);
-                addM(countM);
-                subtractD(withoutM);
+                addM();
+                
+                if ( withoutM.toString().length == 3 && withoutM.toString() >= 500 ){
+                    console.log('above 500');
+                    subtractD(withoutM);
+                };
+                if (withoutM.toString().length === 3 && withoutM.toString() < 500){
+                    console.log('below 500');
+                    subtractC(withoutM);
+                };
             }
 
             function subtractD(withoutM) {
                 countD = parseInt(withoutM.toString()/500);
                 withoutD = withoutM.toString() - countD * 500;
                 console.log(withoutD.toString());
-                console.log('subtractD worked');
-                addD(countD);
-                subtractC(withoutD);
+                console.log('subtractD worked')
             }
 
             function subtractC(withoutM) {
                 countC = parseInt(withoutM.toString()/100);
                 withoutC = withoutM.toString() - countC * 100;
                 console.log(withoutC.toString());
-                console.log('subtractC worked');
-                addC(countC);
-                subtractL(withoutC);
+                console.log('subtractC worked')
             }
-
-            function subtractL(withoutC) {
-                countL = parseInt(withoutC.toString()/50);
-                withoutL = withoutC.toString() - countL * 50;
-                console.log('subtractL worked');
-                addL(countL);
-            }
+            
+            
             
             function addM(countM){
                 if (countM){
-                    mAnswer = thousand.repeat(countM.toString());
-                    console.log(mAnswer);
+                    mAnswer=thousand.repeat(countM.toString());
                 }
             }
 
-            function addD(countD){
+            function addD (countD){
                 if (countD){
-                    dAnswer = fiveHundred.repeat(countD.toString());
-                    console.log(dAnswer);
+                    dAnswer=fiveHundred.repeat(countD.toString());
                 }
             }
-
-            function addC(countC){
-                if (countC){
-                    cAnswer = hundred.repeat(countC.toString());
-                    console.log(cAnswer);
-                }
-            }
-
-            function addL(countL){
-                if (countL){
-                    lAnswer = fifty.repeat(countL.toString());
-                    console.log(lAnswer);
-                }
-            }
-           
            
             
-            let addedAnswers = mAnswer + dAnswer + cAnswer + lAnswer
+            let addedAnswers = mAnswer 
             
             
             
